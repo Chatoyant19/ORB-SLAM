@@ -138,7 +138,7 @@ std::vector<float> Converter::toQuaternion(const cv::Mat &M)
 {
     Eigen::Matrix<double,3,3> eigMat = toMatrix3d(M);
     Eigen::Quaterniond q(eigMat);
-
+    q.normalize();
     std::vector<float> v(4);
     v[0] = q.x();
     v[1] = q.y();
