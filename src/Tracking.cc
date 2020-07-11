@@ -196,7 +196,14 @@ cv::Mat Tracking::GrabImageStereo(const cv::Mat &imRectLeft, const cv::Mat &imRe
         }
     }
 
+    // cv::pyrDown(mImGray,mImGray,cv::Size(mImGray.cols/2, mImGray.rows/2));
+    // cv::pyrDown(imGrayRight,imGrayRight,cv::Size(imGrayRight.cols/2, imGrayRight.rows/2));
+    // cv::imshow("des", mImGray);
+    // cv::waitKey(0);
+    cout<< "image size" << mImGray.size();
     mCurrentFrame = Frame(mImGray,imGrayRight,timestamp,mpORBextractorLeft,mpORBextractorRight,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
+    mpORBextractorRight->operator();
+    
 
     Track();
 
