@@ -202,7 +202,7 @@ cv::Mat Tracking::GrabImageStereo(const cv::Mat &imRectLeft, const cv::Mat &imRe
     // cv::waitKey(0);
     cout<< "image size" << mImGray.size();
     mCurrentFrame = Frame(mImGray,imGrayRight,timestamp,mpORBextractorLeft,mpORBextractorRight,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
-    mpORBextractorRight->operator();
+   // mpORBextractorRight->operator();
     
 
     Track();
